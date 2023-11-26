@@ -1,0 +1,31 @@
+name: Reto 2- Run Python script on different triggers
+
+on: 
+    push:
+    pull_request:
+    schedule:
+        - cron: '0 13 * * *'
+
+jobs:
+    build-triggers:
+        runs-on: ubuntu-latest
+
+        steps:
+        - uses: actions/checkout@v3
+
+        - name: Set up Python
+          uses: actions/setup-python@v4
+          with:
+            python-version: '3.x'
+
+        - name: Run script on push
+          if: github.event_name == 'push'
+          run: python trigger.py "push"
+
+        - name: Run script on pull_request
+          if: github.event_name == 'pull_request'
+          run: python trigger.py "pull_request"
+
+        - name: Run script on schedule
+          if: github.event_name == 'schedule'
+          run: python trigger.py "cron"
