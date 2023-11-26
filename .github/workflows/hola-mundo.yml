@@ -1,4 +1,4 @@
-name: Run Python script
+name: Reto 1 - Run Python script
 
 on: [push]
 
