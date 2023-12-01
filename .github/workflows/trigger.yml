@@ -1,4 +1,4 @@
-name: Reto 2- Run Python script on different triggers
+name: Reto 2 - Run Python script on different triggers
 
 on: 
     push:

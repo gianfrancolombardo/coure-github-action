@@ -1,0 +1,21 @@
+name: Reto 4 - Run PYthon Script with Arguments from contexts
+
+on: [push]
+
+env:
+    access_token: ${{ secrets.ACCESS_TOKEN }}
+
+jobs:
+    build-context:
+        runs-on: ubuntu-latest
+
+        steps:
+        -   name: Checkout
+            uses: actions/checkout@v3
+            
+        -   name: Run Python Script
+            id: run-python-script
+            run: python trigger.py ${{ env.access_Token }}
+
+        -   name: Get the output and run
+            run: echo "The output was ${{ steps.run-python-script.outputs.result }}"
