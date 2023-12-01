@@ -1,4 +1,4 @@
-name: Reto 4 - Run PYthon Script with Arguments from contexts
+name: Reto 4 - Run Python Script with Arguments from contexts
 
 on: [push]
 
