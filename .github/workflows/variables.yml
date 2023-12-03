@@ -1,0 +1,15 @@
+name: Reto 5 - Run Python Script with varibles
+
+on: [push]
+
+env:
+    DAY: Lunes
+
+jobs:
+    show-variables:
+        runs-on: ubuntu-latest
+        env:
+            HELLO: Hola     
+        steps:
+        -   name: Say-Hi
+            run: echo "${{ env.HELLO }} ${{ vars.NAME }}, hoy es ${{ env.DAY }}"
